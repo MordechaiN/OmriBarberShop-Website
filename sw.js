@@ -3,7 +3,7 @@
    Simple offline-first cache for static assets
    ========================================================== */
 
-const CACHE_NAME = 'otm-v1';
+const CACHE_NAME = 'otm-v4';
 const ASSETS = [
   './',
   './index.html',
@@ -16,7 +16,8 @@ const ASSETS = [
   './assets/wordmark.png',
   './assets/favicon.png',
   './assets/apple-touch-icon.png',
-  './assets/omri-portrait.png'
+  './assets/omri-portrait.png',
+  './assets/video.mp4'
 ];
 
 /* Install — cache core assets */
