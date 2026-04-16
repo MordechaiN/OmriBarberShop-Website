@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0f0d0b" />
+  <title>Omri Tzur Magen — Master Barber · אמן התספורת</title>
+  <meta name="description" content="עומרי צור מגן — מאסטר בארבר. תספורות קלאסיות, עיצוב זקן וטיפוח גברים ברמה הגבוהה ביותר. קבעו תור." />
+
+  <!-- Icons -->
+  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" />
+  <link rel="shortcut icon" href="assets/favicon.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Omri Tzur Magen — Master Barber" />
+  <meta property="og:description" content="אמנות התספורת הקלאסית. תספורות, עיצוב זקן וטיפוח גברים ברמה הגבוהה ביותר." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="he_IL" />
+  <meta property="og:image" content="assets/logo.png" />
+
+  <!-- Fonts: Cormorant Garamond (display serif) + Marcellus (classic serif) + Heebo (hebrew body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400&family=Marcellus&family=Frank+Ruhl+Libre:wght@300;400;500;700;900&family=Heebo:wght@300;400;500;700&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Grain overlay -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ================= HEADER ================= -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="brand">
+        <img src="assets/icon.png" alt="OTM — Omri Tzur Magen" class="brand-icon" />
+      </a>
+
+      <nav class="nav" aria-label="ניווט ראשי">
+        <a href="#services">שירותים</a>
+        <a href="#gallery">גלריה</a>
+        <a href="#about">אודות</a>
+        <a href="#testimonials">המלצות</a>
+        <a href="#contact">צרו קשר</a>
+      </nav>
+
+      <a href="#contact" class="cta-mini">קביעת תור</a>
+
+      <button class="hamburger" aria-label="תפריט" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero" id="top">
+    <div class="hero-bg" aria-hidden="true"></div>
+
+    <div class="hero-ornament top-left" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M10 10 L90 10 M10 10 L10 90" stroke="currentColor" stroke-width="0.8"/>
+        <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      </svg>
+    </div>
+    <div class="hero-ornament top-right" aria-hidden="true">
+      <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M90 10 L10 10 M90 10 L90 90" stroke="currentColor" stroke-width="0.8"/>
+        <circle cx="90" cy="10" r="3" stroke="currentColor" stroke-width="0.8" fill="none"/>
+      </svg>
+    </div>
+
+    <div class="hero-inner">
+      <div class="eyebrow">
+        <span class="line"></span>
+        <span>Est. MMXXV · Master Barber</span>
+        <span class="line"></span>
+      </div>
+
+      <div class="hero-logo-wrap">
+        <img src="assets/logo.png" alt="Omri Tzur Magen — Master Barber" class="hero-logo" />
+      </div>
+
+      <p class="hero-sub">
+        אמנות התספורת הקלאסית · עיצוב זקן · טיפוח גברים
+        <br/>
+        <em>The art of the classic gentleman's cut</em>
+      </p>
+
+      <div class="hero-actions">
+        <a href="#contact" class="btn btn-primary">
+          <span>קביעת תור</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        </a>
+        <a href="#services" class="btn btn-ghost">
+          <span>לשירותים שלנו</span>
+        </a>
+      </div>
+
+      <div class="hero-meta">
+        <div><span>01</span> Classic Cuts</div>
+        <div><span>02</span> Hot Towel Shave</div>
+        <div><span>03</span> Beard Sculpting</div>
+      </div>
+    </div>
+
+    <div class="hero-scroll" aria-hidden="true">
+      <span>Scroll</span>
+      <span class="scroll-line"></span>
+    </div>
+  </section>
+
+  <!-- ================= MARQUEE ================= -->
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>★ Classic Barbering ★ Hot Towel Shave ★ Beard Sculpting ★ Gentleman's Grooming ★ Since MMXXV ★</span>
+      <span>★ Classic Barbering ★ Hot Towel Shave ★ Beard Sculpting ★ Gentleman's Grooming ★ Since MMXXV ★</span>
+    </div>
+  </div>
+
+  <!-- ================= PHILOSOPHY ================= -->
+  <section class="philosophy section">
+    <div class="philosophy-watermark" aria-hidden="true">
+      <img src="assets/icon.png" alt="" />
+    </div>
+    <div class="section-inner two-col">
+      <div class="col-left">
+        <span class="section-number">— I —</span>
+        <h2 class="section-title">
+          מסורת. דיוק.<br/>
+          <em>מלאכת יד.</em>
+        </h2>
+      </div>
+      <div class="col-right">
+        <p class="lead">
+          כל תספורת היא דיאלוג. בין הלקוח, הספר, והכלים שעברו מדור לדור.
+          אצל עומרי צור מגן, תספורת אינה שירות — היא טקס.
+        </p>
+        <p>
+          טקסטקסטטקסט. טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.
+          טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט
+          טקסטקסטטקסט טקסטקסטטקסט.
+        </p>
+        <div class="signature">
+          <svg viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round">
+            <path d="M10 40 Q30 10 50 35 T90 30 Q110 15 130 35 T180 25" />
+          </svg>
+          <span>— Omri Tzur Magen</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SERVICES ================= -->
+  <section class="services section dark" id="services">
+    <div class="section-inner">
+      <div class="section-head centered">
+        <span class="section-number">— II —</span>
+        <h2 class="section-title">
+          השירותים<br/>
+          <em>Our Services</em>
+        </h2>
+        <p class="section-kicker">תפריט מלא של שירותי הטיפוח</p>
+      </div>
+
+      <div class="services-grid">
+
+        <article class="service-card">
+          <div class="service-num">01</div>
+          <h3>תספורת גבר קלאסית</h3>
+          <p class="service-en">Classic Gentleman's Cut</p>
+          <p class="service-desc">תספורת מדויקת במספריים וסכין, כולל שטיפה, סטיילינג ואפטר-שייב קר.</p>
+          <div class="service-foot">
+            <span class="price">₪150</span>
+            <span class="dots"></span>
+            <span class="time">45 דק׳</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">02</div>
+          <h3>תספורת + זקן</h3>
+          <p class="service-en">The Full Treatment</p>
+          <p class="service-desc">החבילה המלאה — תספורת קלאסית, עיצוב זקן, גילוח קו עם סכין ומגבת חמה.</p>
+          <div class="service-foot">
+            <span class="price">₪220</span>
+            <span class="dots"></span>
+            <span class="time">75 דק׳</span>
+          </div>
+        </article>
+
+        <article class="service-card featured">
+          <div class="service-badge">האייקוני</div>
+          <div class="service-num">03</div>
+          <h3>Hot Towel Shave</h3>
+          <p class="service-en">The Royal Shave</p>
+          <p class="service-desc">גילוח סכין קלאסי בשלוש מגבות חמות, שמנים אתריים, בלסם ואפטר-שייב.</p>
+          <div class="service-foot">
+            <span class="price">₪180</span>
+            <span class="dots"></span>
+            <span class="time">60 דק׳</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">04</div>
+          <h3>עיצוב זקן</h3>
+          <p class="service-en">Beard Sculpting</p>
+          <p class="service-desc">עיצוב זקן מדויק, גילוח קווי מתאר וטיפוח עם שמנים ובלסם מקצועי.</p>
+          <div class="service-foot">
+            <span class="price">₪90</span>
+            <span class="dots"></span>
+            <span class="time">30 דק׳</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">05</div>
+          <h3>תספורת ילד</h3>
+          <p class="service-en">Young Gentleman</p>
+          <p class="service-desc">חוויית תספורת ראשונה או שגרתית לילדים, באווירה רגועה וללא לחץ.</p>
+          <div class="service-foot">
+            <span class="price">₪100</span>
+            <span class="dots"></span>
+            <span class="time">30 דק׳</span>
+          </div>
+        </article>
+
+        <article class="service-card">
+          <div class="service-num">06</div>
+          <h3>חפיפה וטיפוח</h3>
+          <p class="service-en">Scalp &amp; Hair Treatment</p>
+          <p class="service-desc">טיפול שיער וקרקפת עמוק, עיסוי ראש, מסכה מזינה וסטיילינג.</p>
+          <div class="service-foot">
+            <span class="price">₪120</span>
+            <span class="dots"></span>
+            <span class="time">40 דק׳</span>
+          </div>
+        </article>
+
+      </div>
+
+      <div class="services-foot">
+        <p>* המחירים עשויים להתעדכן. לחבילות מיוחדות ואירועים — <a href="#contact">צרו קשר</a>.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= GALLERY ================= -->
+  <section class="gallery section" id="gallery">
+    <div class="section-inner">
+      <div class="section-head">
+        <span class="section-number">— III —</span>
+        <h2 class="section-title">
+          הגלריה<br/>
+          <em>The Portfolio</em>
+        </h2>
+      </div>
+
+      <div class="gallery-grid">
+        <figure class="g-item g-1"><div class="g-placeholder"><span>01</span><em>Classic Fade</em></div></figure>
+        <figure class="g-item g-2"><div class="g-placeholder"><span>02</span><em>Pompadour</em></div></figure>
+        <figure class="g-item g-3"><div class="g-placeholder"><span>03</span><em>Beard Sculpt</em></div></figure>
+        <figure class="g-item g-4"><div class="g-placeholder"><span>04</span><em>Side Part</em></div></figure>
+        <figure class="g-item g-5"><div class="g-placeholder"><span>05</span><em>Hot Shave</em></div></figure>
+        <figure class="g-item g-6"><div class="g-placeholder"><span>06</span><em>Modern Crop</em></div></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section class="about section" id="about">
+    <div class="section-inner two-col reverse">
+      <div class="col-left about-image">
+        <div class="about-photo">
+          <div class="photo-placeholder">
+            <span>Portrait</span>
+            <em>Omri Tzur Magen</em>
+          </div>
+          <div class="photo-frame" aria-hidden="true"></div>
+        </div>
+      </div>
+
+      <div class="col-right">
+        <span class="section-number">— IV —</span>
+        <h2 class="section-title">
+          האיש מאחורי<br/>
+          <em>המספריים.</em>
+        </h2>
+        <p class="lead">
+          טקסטקסטטקסט — עומרי צור מגן, מאסטר בארבר.
+        </p>
+        <p>
+          טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט
+          טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.
+          טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.
+        </p>
+        <p>
+          טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט
+          טקסטקסטטקסט טקסטקסטטקסט.
+        </p>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">שנות ניסיון</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">3.5k</div>
+            <div class="stat-label">לקוחות מרוצים</div>
+          </div>
+          <div class="stat">
+            <div class="stat-num">100%</div>
+            <div class="stat-label">מלאכת יד</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIALS ================= -->
+  <section class="testimonials section dark" id="testimonials">
+    <div class="section-inner">
+      <div class="section-head centered">
+        <span class="section-number">— V —</span>
+        <h2 class="section-title">
+          מילה של<br/>
+          <em>לקוחותינו.</em>
+        </h2>
+      </div>
+
+      <div class="testi-grid">
+        <blockquote class="testi">
+          <div class="quote-mark">&ldquo;</div>
+          <p>טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.</p>
+          <footer>
+            <div class="stars">★★★★★</div>
+            <cite>— דניאל ל׳</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi">
+          <div class="quote-mark">&ldquo;</div>
+          <p>טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.</p>
+          <footer>
+            <div class="stars">★★★★★</div>
+            <cite>— אבי ק׳</cite>
+          </footer>
+        </blockquote>
+
+        <blockquote class="testi">
+          <div class="quote-mark">&ldquo;</div>
+          <p>טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט טקסטקסטטקסט.</p>
+          <footer>
+            <div class="stars">★★★★★</div>
+            <cite>— יונתן ב׳</cite>
+          </footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT / BOOKING ================= -->
+  <section class="contact section" id="contact">
+    <div class="section-inner">
+      <div class="section-head centered">
+        <span class="section-number">— VI —</span>
+        <h2 class="section-title">
+          קביעת תור<br/>
+          <em>Reserve Your Seat</em>
+        </h2>
+        <p class="section-kicker">המקומות מוגבלים. התור שלכם שמור.</p>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+          </div>
+          <h3>טלפון</h3>
+          <p class="contact-big"><a href="tel:+972000000000">050-000-0000</a></p>
+          <p class="contact-small">זמינים בימי הפעילות</p>
+        </div>
+
+        <div class="contact-card featured">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          </div>
+          <h3>WhatsApp</h3>
+          <p class="contact-big"><a href="https://wa.me/972000000000" target="_blank" rel="noopener">שלחו הודעה</a></p>
+          <p class="contact-small">המהיר ביותר לקביעת תור</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 7l-10 7L2 7"/></svg>
+          </div>
+          <h3>דוא״ל</h3>
+          <p class="contact-big"><a href="mailto:hello@omritzurmagen.com">hello@otm.co.il</a></p>
+          <p class="contact-small">לפניות ושיתופי פעולה</p>
+        </div>
+
+      </div>
+
+      <div class="hours">
+        <h3>שעות פעילות</h3>
+        <div class="hours-grid">
+          <div><span>ראשון — חמישי</span><span class="dots"></span><span>09:00 — 20:00</span></div>
+          <div><span>שישי</span><span class="dots"></span><span>08:00 — 14:00</span></div>
+          <div><span>שבת</span><span class="dots"></span><span>סגור</span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="assets/icon.png" alt="OTM" class="foot-logo" />
+          <p>Omri Tzur Magen<br/><em>Master Barber · Est. MMXXV</em></p>
+        </div>
+
+        <div class="footer-links">
+          <h4>ניווט</h4>
+          <a href="#services">שירותים</a>
+          <a href="#gallery">גלריה</a>
+          <a href="#about">אודות</a>
+          <a href="#contact">צרו קשר</a>
+        </div>
+
+        <div class="footer-social">
+          <h4>עקבו אחרינו</h4>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+            </a>
+            <a href="#" aria-label="TikTok">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© <span id="year"></span> Omri Tzur Magen · All Rights Reserved</p>
+        <p class="crafted">Crafted with precision</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
