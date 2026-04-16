@@ -1327,6 +1327,8 @@ a { color: inherit; text-decoration: none; }
   background: #0a0807;
   opacity: 1;
   visibility: visible;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
