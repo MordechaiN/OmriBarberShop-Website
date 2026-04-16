@@ -224,7 +224,7 @@ a { color: inherit; text-decoration: none; }
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: grayscale(0.3) contrast(1.08) brightness(0.55);
+  filter: grayscale(0.35) contrast(1.05) brightness(0.42);
   pointer-events: none;
 }
 
@@ -233,8 +233,8 @@ a { color: inherit; text-decoration: none; }
   inset: 0;
   z-index: 1;
   background:
-    radial-gradient(ellipse at 50% 45%, rgba(10, 8, 7, 0.35) 0%, rgba(10, 8, 7, 0.78) 70%, rgba(10, 8, 7, 0.92) 100%),
-    linear-gradient(180deg, rgba(10, 8, 7, 0.55) 0%, rgba(10, 8, 7, 0.7) 100%);
+    radial-gradient(ellipse at 50% 45%, rgba(10, 8, 7, 0.45) 0%, rgba(10, 8, 7, 0.84) 68%, rgba(10, 8, 7, 0.95) 100%),
+    linear-gradient(180deg, rgba(10, 8, 7, 0.62) 0%, rgba(10, 8, 7, 0.78) 100%);
   pointer-events: none;
 }
 
@@ -326,6 +326,7 @@ a { color: inherit; text-decoration: none; }
   display: flex;
   justify-content: center;
   animation: logoReveal 1.8s cubic-bezier(0.19, 1, 0.22, 1);
+  isolation: isolate;
 }
 
 .hero-logo-glow {
@@ -333,19 +334,29 @@ a { color: inherit; text-decoration: none; }
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 120%;
-  height: 120%;
-  background: radial-gradient(ellipse at center, rgba(176, 141, 74, 0.18) 0%, transparent 60%);
+  width: 140%;
+  height: 140%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(176, 141, 74, 0.42) 0%,
+    rgba(176, 141, 74, 0.18) 35%,
+    rgba(176, 141, 74, 0) 72%
+  );
   pointer-events: none;
-  z-index: -1;
-  animation: glowPulse 4s ease-in-out infinite;
+  z-index: 0;
+  filter: blur(18px);
+  animation: glowPulse 3.2s ease-in-out infinite;
 }
 
 .hero-logo {
+  position: relative;
+  z-index: 1;
   width: clamp(260px, 48vw, 540px);
   height: auto;
   display: block;
-  filter: drop-shadow(0 10px 40px rgba(176, 141, 74, 0.18));
+  filter:
+    drop-shadow(0 0 18px rgba(176, 141, 74, 0.35))
+    drop-shadow(0 0 42px rgba(176, 141, 74, 0.22));
 }
 
 @keyframes logoReveal {
@@ -1295,20 +1306,18 @@ a { color: inherit; text-decoration: none; }
 .nav.is-open {
   display: flex;
   position: fixed;
-  top: 0; right: 0; bottom: 0; left: 0;
-  width: 100vw;
-  height: 100vh;
-  height: 100dvh;
+  inset: 0;
   background: #0a0807;
-  background:
-    radial-gradient(ellipse at 50% 30%, #1a1410 0%, #0a0807 70%, #050403 100%);
+  opacity: 1;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 2rem;
+  gap: 2.2rem;
   z-index: 200;
-  animation: menuFade 0.35s ease;
-  padding: 2rem;
+  animation: fadeUp 0.25s ease;
+  padding: 2.2rem 1.5rem;
   text-align: center;
 }
 
@@ -1390,7 +1399,7 @@ a { color: inherit; text-decoration: none; }
 
 /* When mobile nav is open, ensure hamburger stays on top */
 .site-header:has(.nav.is-open) {
-  z-index: 201;
+  z-index: 200;
   background: transparent;
   border-bottom-color: transparent;
 }
