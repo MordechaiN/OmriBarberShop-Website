@@ -3,7 +3,7 @@
    Simple offline-first cache for static assets
    ========================================================== */
 
-const CACHE_NAME = 'otm-v5';
+const CACHE_NAME = 'otm-v3';
 const ASSETS = [
   './',
   './index.html',
