@@ -28,6 +28,7 @@
     nav.classList.remove('is-open');
     burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
     document.body.style.overflow = '';
   };
 
@@ -37,6 +38,7 @@
       const isOpen = nav.classList.toggle('is-open');
       burger.classList.toggle('is-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
+      document.body.classList.toggle('menu-open', isOpen);
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
@@ -44,15 +46,6 @@
     nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', closeMenu);
     });
-
-    // Close button inside nav
-    const navClose = nav.querySelector('.nav-close');
-    if (navClose) {
-      navClose.addEventListener('click', (e) => {
-        e.stopPropagation();
-        closeMenu();
-      });
-    }
 
     // Close when clicking the overlay background itself (not on links)
     nav.addEventListener('click', (e) => {
