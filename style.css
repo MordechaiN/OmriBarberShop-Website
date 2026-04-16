@@ -125,6 +125,10 @@ a { color: inherit; text-decoration: none; }
   gap: 2.3rem;
 }
 
+.nav-close {
+  display: none;
+}
+
 .nav a {
   font-family: var(--f-body);
   font-size: 0.92rem;
@@ -354,6 +358,11 @@ a { color: inherit; text-decoration: none; }
   50% { opacity: 1; }
 }
 
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
 .hero-sub {
   font-family: var(--f-display);
   font-size: clamp(1.1rem, 2vw, 1.5rem);
@@ -475,39 +484,6 @@ a { color: inherit; text-decoration: none; }
 .btn-ghost:hover {
   background: var(--ink);
   color: var(--cream);
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-  font-family: var(--f-body);
-  font-size: 0.7rem;
-  letter-spacing: 0.2em;
-  color: var(--cream-warm);
-  opacity: 0.5;
-  z-index: 4;
-}
-.scroll-line {
-  width: 1px;
-  height: 50px;
-  background: linear-gradient(180deg, var(--cream-warm) 0%, transparent 100%);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
-@keyframes scrollPulse {
-  0%, 100% { transform: scaleY(1); opacity: 1; }
-  50% { transform: scaleY(0.5); opacity: 0.3; }
-}
-
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(30px); }
-  to { opacity: 1; transform: translateY(0); }
 }
 
 /* ==================== MARQUEE ==================== */
@@ -1376,6 +1352,32 @@ a { color: inherit; text-decoration: none; }
   color: var(--gold);
 }
 
+.nav.is-open .nav-close {
+  display: flex;
+  position: absolute;
+  top: 1.2rem;
+  left: 1.2rem;
+  width: 48px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 1px solid var(--gold-faint);
+  color: var(--gold);
+  font-size: 2rem;
+  font-family: var(--f-display);
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 0;
+  z-index: 210;
+}
+
+.nav.is-open .nav-close:hover {
+  background: var(--gold);
+  color: var(--ink);
+}
+
 @keyframes menuFade {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -1435,7 +1437,26 @@ a { color: inherit; text-decoration: none; }
   .brand-icon { height: 38px; }
   .site-header.scrolled .brand-icon { height: 32px; }
 
-  .hero { padding: 5rem var(--gutter) 3rem; }
+  /* Mobile Hero: make sure video stays in background, text stays centered */
+  .hero {
+    padding: 5rem var(--gutter) 3rem;
+    min-height: 100vh;
+    min-height: 100dvh;
+  }
+
+  .hero-video {
+    object-position: center center;
+    /* Stronger darkening on mobile so text remains legible over busy video frames */
+    filter: grayscale(0.35) contrast(1.1) brightness(0.4);
+  }
+
+  .hero-overlay {
+    /* Heavier overlay on mobile for readability */
+    background:
+      radial-gradient(ellipse at 50% 40%, rgba(10, 8, 7, 0.55) 0%, rgba(10, 8, 7, 0.88) 70%, rgba(10, 8, 7, 0.96) 100%),
+      linear-gradient(180deg, rgba(10, 8, 7, 0.75) 0%, rgba(10, 8, 7, 0.85) 100%);
+  }
+
   .eyebrow {
     font-size: 0.64rem;
     letter-spacing: 0.18em;
@@ -1456,7 +1477,7 @@ a { color: inherit; text-decoration: none; }
     max-width: 320px;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 2rem;
+    margin-bottom: 1.2rem;
   }
   .btn {
     justify-content: center;
@@ -1464,7 +1485,13 @@ a { color: inherit; text-decoration: none; }
     font-size: 0.88rem;
   }
 
-  .hero-scroll { display: none; }
+  .hero-fomo {
+    font-size: 0.78rem;
+    padding: 0 1rem;
+    text-align: center;
+    line-height: 1.5;
+  }
+
   .hero::after { height: 60px; }
 
   .marquee { padding: 1rem 0; }
@@ -1507,6 +1534,12 @@ a { color: inherit; text-decoration: none; }
   .contact-card { padding: 2rem 1.5rem; }
   .contact-big { font-size: 1.3rem; }
 
+  .contact-punch::before,
+  .contact-punch::after {
+    width: 18px;
+    margin: 0 0.4rem;
+  }
+
   .hours { padding: 2rem 1.3rem; }
   .hours-grid > div { font-size: 0.95rem; }
 
@@ -1533,6 +1566,10 @@ a { color: inherit; text-decoration: none; }
   .lb-prev { right: 0.6rem; }
   .lb-next { left: 0.6rem; }
   .lb-caption { font-size: 1rem; }
+
+  .nav.is-open { gap: 1.5rem; padding: 4rem 1.5rem 2rem; }
+  .nav.is-open a { font-size: 1.6rem; }
+  .nav.is-open .nav-close { top: 0.8rem; left: 0.8rem; width: 42px; height: 42px; font-size: 1.7rem; }
 }
 
 @media (max-width: 380px) {

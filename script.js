@@ -32,15 +32,31 @@
   };
 
   if (burger && nav) {
-    burger.addEventListener('click', () => {
+    burger.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isOpen = nav.classList.toggle('is-open');
       burger.classList.toggle('is-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
+    // Close when clicking any nav link
     nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', closeMenu);
+    });
+
+    // Close button inside nav
+    const navClose = nav.querySelector('.nav-close');
+    if (navClose) {
+      navClose.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMenu();
+      });
+    }
+
+    // Close when clicking the overlay background itself (not on links)
+    nav.addEventListener('click', (e) => {
+      if (e.target === nav) closeMenu();
     });
 
     // Close with ESC
