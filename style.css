@@ -959,12 +959,10 @@ a { color: inherit; text-decoration: none; }
 
 .about-photo {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4 / 5;
   max-width: 440px;
   margin: 0 auto;
-  padding: 14px;
-  background: linear-gradient(145deg, rgba(20, 16, 13, 0.96) 0%, rgba(10, 8, 7, 0.98) 100%);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .portrait-img {
@@ -975,16 +973,18 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   z-index: 2;
   filter: contrast(1.05) saturate(0.95);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .photo-frame {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
+  top: 18px;
+  left: -18px;
+  right: 18px;
+  bottom: -18px;
   border: 1px solid var(--gold);
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
 }
 
