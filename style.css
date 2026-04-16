@@ -95,8 +95,8 @@ a { color: inherit; text-decoration: none; }
 }
 
 body.menu-open .site-header {
-  background: transparent;
-  border-bottom-color: transparent;
+  background: #0a0807;
+  border-bottom-color: rgba(176, 141, 74, 0.2);
 }
 
 .header-inner {
@@ -189,6 +189,10 @@ body.menu-open .site-header {
   z-index: 202;
 }
 
+.hamburger.is-open {
+  opacity: 0;
+  pointer-events: none;
+}
 .hamburger span {
   display: block;
   width: 26px;
@@ -964,12 +968,10 @@ body.menu-open .site-header {
 
 .about-photo {
   position: relative;
-  aspect-ratio: 4/5;
+  aspect-ratio: 4 / 5;
   max-width: 440px;
   margin: 0 auto;
-  padding: 14px;
-  background: linear-gradient(145deg, rgba(20, 16, 13, 0.96) 0%, rgba(10, 8, 7, 0.98) 100%);
-  overflow: hidden;
+  overflow: visible;
 }
 
 .portrait-img {
@@ -980,16 +982,18 @@ body.menu-open .site-header {
   position: relative;
   z-index: 2;
   filter: contrast(1.05) saturate(0.95);
+  border-radius: 2px;
+  overflow: hidden;
 }
 
 .photo-frame {
   position: absolute;
-  top: 6px;
-  left: 6px;
-  right: 6px;
-  bottom: 6px;
+  top: 18px;
+  left: -18px;
+  right: 18px;
+  bottom: -18px;
   border: 1px solid var(--gold);
-  z-index: 3;
+  z-index: 1;
   pointer-events: none;
 }
 
@@ -1324,38 +1328,53 @@ body.menu-open .site-header {
   transform: translateY(0);
 }
 
-/* ==================== RESPONSIVE ==================== */
-@media (max-width: 960px) {
-  .nav {
-    display: none;
-  }
+/* ==================== MOBILE NAV ==================== */
+.nav.is-open {
+  display: flex;
+  position: fixed;
+  inset: 0;
+  background: #0a0807;
+  opacity: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+  z-index: 210;
+  padding: 2.2rem 1.5rem;
+  text-align: center;
+  overflow-y: auto;
+}
 
-  .hamburger {
-    display: flex;
-  }
+.nav.is-open::before {
+  content: '';
+  position: absolute;
+  top: max(4.2rem, calc(env(safe-area-inset-top) + 3.3rem));
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(88%, 520px);
+  max-width: 500px;
+  height: 1px;
+  background: var(--gold-faint);
+  opacity: 0.3;
+  pointer-events: none;
+}
 
-  .cta-mini {
-    display: none;
-  }
+.nav.is-open a {
+  font-family: var(--f-display);
+  font-size: clamp(2rem, 6.7vw, 2.35rem);
+  color: var(--cream);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  position: relative;
+  padding: 0.3rem 1rem;
+  animation: menuItemFade 0.5s ease backwards;
+}
 
-  .nav.is-open {
-    display: flex;
-    position: fixed;
-    top: 72px;
-    right: 0;
-    left: 0;
-    bottom: 0;
-    background: #0a0807;
-    flex-direction: column;
-    align-items: stretch;
-    justify-content: flex-start;
-    gap: 0;
-    z-index: 210;
-    padding: 1rem 1.2rem 2rem;
-    overflow-y: auto;
-    text-align: right;
-    border-top: 1px solid rgba(176, 141, 74, 0.12);
-  }
+.nav.is-open a:nth-of-type(1) { animation-delay: 0.08s; }
+.nav.is-open a:nth-of-type(2) { animation-delay: 0.14s; }
+.nav.is-open a:nth-of-type(3) { animation-delay: 0.20s; }
+.nav.is-open a:nth-of-type(4) { animation-delay: 0.26s; }
+.nav.is-open a:nth-of-type(5) { animation-delay: 0.32s; }
 
   .nav.is-open::before {
     display: none;
@@ -1372,25 +1391,28 @@ body.menu-open .site-header {
     animation: none;
   }
 
-  .nav.is-open a:last-child {
-    border-bottom: none;
-  }
-
-  .nav.is-open a::after {
-    display: none;
-  }
-
-  .nav.is-open a:hover {
-    color: var(--gold);
-  }
+@keyframes menuFade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
   .site-header {
     padding: 0.7rem var(--gutter);
   }
 
-  .brand-icon {
-    height: 38px;
-  }
+/* When mobile nav is open */
+.site-header:has(.nav.is-open) {
+  z-index: 220;
+  background: rgba(10, 8, 7, 0.96);
+  border-bottom-color: rgba(176, 141, 74, 0.18);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+}
+
+.site-header:has(.nav.is-open) .hamburger {
+  opacity: 0;
+  pointer-events: none;
+}
 
   .site-header.scrolled .brand-icon {
     height: 32px;
@@ -1571,6 +1593,8 @@ body.menu-open .site-header {
   .lb-next { left: 0.6rem; }
   .lb-caption { font-size: 1rem; }
 
+  .nav.is-open { gap: 1.5rem; padding: 4rem 1.5rem 2rem; }
+  .nav.is-open a { font-size: 1.6rem; }
 }
 
 @media (max-width: 380px) {
