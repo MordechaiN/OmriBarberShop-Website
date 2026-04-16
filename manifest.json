@@ -1,0 +1,27 @@
+{
+  "name": "עומרי צור מגן — מאסטר בארבר",
+  "short_name": "OTM",
+  "description": "תספורות גברים ברמת דיוק גבוהה. עבודה לפי תיאום מראש בלבד.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#0a0807",
+  "background_color": "#0a0807",
+  "lang": "he",
+  "dir": "rtl",
+  "icons": [
+    {
+      "src": "assets/favicon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
