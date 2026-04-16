@@ -26,6 +26,7 @@
   const closeMenu = () => {
     if (!nav || !burger) return;
     nav.classList.remove('is-open');
+    burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
     document.body.style.overflow = '';
   };
@@ -33,6 +34,7 @@
   if (burger && nav) {
     burger.addEventListener('click', () => {
       const isOpen = nav.classList.toggle('is-open');
+      burger.classList.toggle('is-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
       document.body.style.overflow = isOpen ? 'hidden' : '';
     });
