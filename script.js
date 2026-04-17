@@ -19,7 +19,7 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  /* ---- Mobile menu ---- */
+  /* ---- Mobile menu (dropdown style) ---- */
   const burger = document.querySelector('.hamburger');
   const nav = document.querySelector('.nav');
 
@@ -28,8 +28,6 @@
     nav.classList.remove('is-open');
     burger.classList.remove('is-open');
     burger.setAttribute('aria-expanded', 'false');
-    document.body.classList.remove('menu-open');
-    document.body.style.overflow = '';
   };
 
   if (burger && nav) {
@@ -38,23 +36,28 @@
       const isOpen = nav.classList.toggle('is-open');
       burger.classList.toggle('is-open', isOpen);
       burger.setAttribute('aria-expanded', String(isOpen));
-      document.body.classList.toggle('menu-open', isOpen);
-      document.body.style.overflow = isOpen ? 'hidden' : '';
     });
 
-    // Close when clicking any nav link
+    // Close when clicking any nav link (user wants to navigate)
     nav.querySelectorAll('a').forEach(a => {
       a.addEventListener('click', closeMenu);
     });
 
-    // Close when clicking the overlay background itself (not on links)
-    nav.addEventListener('click', (e) => {
-      if (e.target === nav) closeMenu();
+    // Close when clicking anywhere outside the nav/burger
+    document.addEventListener('click', (e) => {
+      if (!nav.classList.contains('is-open')) return;
+      if (nav.contains(e.target) || burger.contains(e.target)) return;
+      closeMenu();
     });
 
     // Close with ESC
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && nav.classList.contains('is-open')) closeMenu();
+    });
+
+    // Close when resizing to desktop
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 960 && nav.classList.contains('is-open')) closeMenu();
     });
   }
 
@@ -103,16 +106,18 @@
     const placeholder = item.querySelector('.g-placeholder');
     const caption = item.dataset.caption || '';
 
-    lbContent.innerHTML = '';
+    // Clear previous content safely (no innerHTML)
+    while (lbContent.firstChild) lbContent.removeChild(lbContent.firstChild);
+
     if (img) {
       const clone = img.cloneNode();
       lbContent.appendChild(clone);
     } else if (placeholder) {
-      // Clone the placeholder so it looks the same when expanded
       const clone = placeholder.cloneNode(true);
       lbContent.appendChild(clone);
     }
 
+    // textContent is safe against HTML injection
     lbCaption.textContent = caption;
     lbCounter.textContent = `${idx + 1} / ${galleryItems.length}`;
     currentIndex = idx;
