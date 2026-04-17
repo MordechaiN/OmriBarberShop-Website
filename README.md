@@ -15,3 +15,47 @@
 ---
 
 ## 📁 Structure
+
+
+.
+├── index.html
+├── style.css
+├── script.js
+├── manifest.json
+├── sw.js
+├── assets/
+
+
+---
+
+## 🚀 Live Demo
+
+👉 [https://YOUR_USERNAME.github.io/omri-tzur-magen/](https://mordechain.github.io/OmriBarberShop-Website/)
+
+---
+
+## ⚙️ Run locally
+
+```bash
+python3 -m http.server 8000
+📲 PWA
+
+האתר תומך:
+
+הוספה למסך הבית
+עבודה אופליין
+חוויית אפליקציה
+🔧 לפני פרסום (Checklist)
+ עדכון טלפון
+ עדכון WhatsApp
+ עדכון רשתות חברתיות
+ הוספת מיקום
+ בדיקת תפריט מובייל
+🎯 Roadmap
+מערכת קביעת תורים (Booksy / Setmore)
+Google Maps Embed
+Schema.org SEO
+שדרוג גלריה עם תמונות מקוריות
+📜 License
+
+Private — All rights reserved.
