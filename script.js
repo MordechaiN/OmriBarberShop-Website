@@ -61,6 +61,23 @@
     });
   }
 
+  /* ---- Hero video graceful fallback ---- */
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) {
+    heroVideo.addEventListener('error', () => { heroVideo.style.display = 'none'; });
+    const source = heroVideo.querySelector('source');
+    if (source) source.addEventListener('error', () => { heroVideo.style.display = 'none'; });
+  }
+
+  /* ---- Social placeholder links ---- */
+  // Prevent navigation on placeholder social links (href="#").
+  // When real URLs are added, remove data-social and put real href + target=_blank rel=noopener noreferrer.
+  document.querySelectorAll('a[data-social]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      if (a.getAttribute('href') === '#') e.preventDefault();
+    });
+  });
+
   /* ---- Intersection reveal ---- */
   const revealEls = document.querySelectorAll(
     '.section-title, .lead, .service-card, .testi, .contact-card, .g-item, .hours, .about-photo, .stat, .hero-tagline'

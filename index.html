@@ -6,10 +6,12 @@
   <meta name="theme-color" content="#0a0807" />
 
   <!-- Security headers -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; media-src 'self'; connect-src 'self'; frame-src 'self' https://www.google.com; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob:; media-src 'self'; connect-src 'self'; frame-src https://www.google.com https://www.youtube.com; frame-ancestors 'none'; base-uri 'self'; form-action 'self'; object-src 'none'; upgrade-insecure-requests;" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <meta name="robots" content="index, follow" />
   <meta name="format-detection" content="telephone=no" />
+  <meta http-equiv="Permissions-Policy" content="geolocation=(), microphone=(), camera=(), payment=(), usb=(), interest-cohort=()" />
   <title>עומרי צור מגן — מאסטר בארבר | תספורות גברים ברמה אחרת</title>
   <meta name="description" content="עומרי צור מגן — מאסטר בארבר. תספורות גברים ברמת דיוק גבוהה, עיצוב זקן קלאסי וטיפוח שמדבר סטייל. עבודה לפי תיאום מראש בלבד." />
 
@@ -28,29 +30,40 @@
   <meta property="og:locale" content="he_IL" />
   <meta property="og:image" content="assets/logo.png" />
 
-  <!-- Schema.org LocalBusiness (HairSalon) - TODO: activate when location/phone are set
+  <!-- Schema.org HairSalon — active. Add address/geo when location is confirmed. -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "HairSalon",
     "name": "עומרי צור מגן — Master Barber",
-    "image": "https://YOUR-DOMAIN/assets/logo.png",
-    "telephone": "+972-50-000-0000",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "REPLACE_ADDRESS",
-      "addressLocality": "REPLACE_CITY",
-      "addressCountry": "IL"
+    "alternateName": "Omri Tzur Magen",
+    "description": "תספורות גברים ברמת דיוק גבוהה, עיצוב זקן קלאסי וטיפוח גברים. עבודה לפי תיאום מראש בלבד.",
+    "image": "assets/logo.png",
+    "logo": "assets/logo.png",
+    "telephone": "+972-52-545-3732",
+    "priceRange": "₪₪",
+    "areaServed": {
+      "@type": "Country",
+      "name": "Israel"
     },
     "openingHoursSpecification": [
       {"@type":"OpeningHoursSpecification","dayOfWeek":["Sunday","Monday","Tuesday","Wednesday","Thursday"],"opens":"09:00","closes":"20:00"},
       {"@type":"OpeningHoursSpecification","dayOfWeek":"Friday","opens":"08:00","closes":"14:00"}
     ],
-    "priceRange": "₪₪"
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "שירותי טיפוח גברים",
+      "itemListElement": [
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"תספורת גבר קלאסית"},"price":"150","priceCurrency":"ILS"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"תספורת + עיצוב זקן"},"price":"220","priceCurrency":"ILS"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"גילוח סכין קלאסי"},"price":"180","priceCurrency":"ILS"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"עיצוב זקן"},"price":"90","priceCurrency":"ILS"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"תספורת ילד"},"price":"100","priceCurrency":"ILS"},
+        {"@type":"Offer","itemOffered":{"@type":"Service","name":"חפיפה וטיפוח שיער"},"price":"120","priceCurrency":"ILS"}
+      ]
+    }
   }
   </script>
-  -->
-
   <!-- Fonts: Frank Ruhl Libre (Hebrew serif) + Heebo (Hebrew sans) + Cormorant (accent latin) -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -433,7 +446,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
           </div>
           <h3>טלפון</h3>
-          <p class="contact-big"><a href="tel:+972000000000">050-000-0000</a></p>
+          <p class="contact-big"><a href="tel:+972525453732">052-545-3732</a></p>
           <p class="contact-small">זמינים בשעות הפעילות</p>
         </div>
 
@@ -442,7 +455,7 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
           </div>
           <h3>וואטסאפ</h3>
-          <p class="contact-big"><a href="https://wa.me/972000000000" target="_blank" rel="noopener">שלחו הודעה</a></p>
+          <p class="contact-big"><a href="https://wa.me/972525453732?text=%D7%90%D7%A0%D7%99%20%D7%A8%D7%95%D7%A6%D7%94%20%D7%9C%D7%A7%D7%91%D7%95%D7%A2%20%D7%AA%D7%95%D7%A8%20%D7%9C%D7%94%D7%A1%D7%AA%D7%A4%D7%A8%20%D7%90%D7%A6%D7%9C%D7%9A" target="_blank" rel="noopener noreferrer">שלחו הודעה</a></p>
           <p class="contact-small">הדרך המהירה ביותר לקביעת תור</p>
         </div>
 
@@ -498,13 +511,13 @@
         <div class="footer-social">
           <h4>עקבו אחרינו</h4>
           <div class="social-links">
-            <a href="#" aria-label="אינסטגרם">
+            <a href="#" aria-label="אינסטגרם" data-social="instagram">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="#" aria-label="פייסבוק">
+            <a href="#" aria-label="פייסבוק" data-social="facebook">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
             </a>
-            <a href="#" aria-label="טיקטוק">
+            <a href="#" aria-label="טיקטוק" data-social="tiktok">
               <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 104 4V4a5 5 0 005 5"/></svg>
             </a>
           </div>
