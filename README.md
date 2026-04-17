@@ -30,7 +30,7 @@
 
 ## 🚀 Live Demo
 
-👉 [https://YOUR_USERNAME.github.io/omri-tzur-magen/](https://mordechain.github.io/OmriBarberShop-Website/)
+👉 https://mordechain.github.io/OmriBarberShop-Website
 
 ---
 
